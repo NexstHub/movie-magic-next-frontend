@@ -1,0 +1,3 @@
+[submodule "rust-backend"]
+	path = rust-backend
+	url = git@github.com:NexstHub/movie-magic-rust-backend.git

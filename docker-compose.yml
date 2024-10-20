@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./rust-backend
+    container_name: rust-backend
+    ports:
+      - "3000:3000"
+    networks:
+      - fullstack
+
+  frontend:
+    build:
+      context: ./
+    container_name: next-frontend
+    ports:
+      - "3001:3000"
+    depends_on:
+      - backend
+    networks:
+      - fullstack
+
+networks:
+  fullstack:
+    driver: bridge
+
